@@ -1,8 +1,8 @@
 package steps.ui;
 
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 import models.LoginResponseModel;
-import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -23,6 +23,7 @@ public class UiSteps {
         open("/profile");
         $("#delete-record-undefined").click();
         $("#closeSmallModal-ok").click();
+        Selenide.refresh();
     }
     @Step("Проверяем что книга удалена из корзины через UI")
     public void checkDeleteBookWithUi(){
