@@ -31,7 +31,10 @@ dependencies {
             'com.codeborne:selenide:7.3.3'
     )
 }
-
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
 test {
     useJUnitPlatform()
 }
