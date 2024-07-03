@@ -4,11 +4,11 @@ import models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import steps.api.ApiSteps;
-import steps.ui.UiSteps;
+import pages.ProfilePage;
 
 public class DeleteBookTest extends TestBase{
     ApiSteps apisteps = new ApiSteps();
-    UiSteps uiSteps = new UiSteps();
+    ProfilePage profilePage = new ProfilePage();
     LoginResponseModel loginResponseModel = apisteps.loginUser();
     @DisplayName("Тест на удаление книги из корзины пользователя")
     @Test
@@ -16,8 +16,8 @@ public class DeleteBookTest extends TestBase{
         apisteps.loginUser();
         apisteps.deleteBook(loginResponseModel);
         apisteps.addBook(loginResponseModel);
-        uiSteps.addCookie(loginResponseModel);
-        uiSteps.delBookUi();
-        uiSteps.checkDeleteBookWithUi();
+        profilePage.addCookie(loginResponseModel);
+        profilePage.delBookUi();
+        profilePage.checkDeleteBookWithUi();
     }
 }

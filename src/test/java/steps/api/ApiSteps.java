@@ -9,13 +9,11 @@ import static java.lang.String.format;
 import static specs.BookStoreSpecs.*;
 
 public class ApiSteps {
-    final String userName = "DimKa";
-    final String password = "Karpuk20!";
     @Step("Авторизация пользователя")
     public LoginResponseModel loginUser() {
         LoginRequestModel loginModel = new LoginRequestModel();
-        loginModel.setPassword(password);
-        loginModel.setUserName(userName);
+        loginModel.setPassword(loginModel.getPassword());
+        loginModel.setUserName(loginModel.getUserName());
        return (given(requestSpecificationWithContentTypeApplicationJson)
                 .body(loginModel)
                 .when()
@@ -24,7 +22,7 @@ public class ApiSteps {
                 .spec(responseSpecificationWithStatusCode200)
                 .extract().as(LoginResponseModel.class));
     }
-    @Step("Удаление книги из корзины пользователя")
+    @Step("Удаляем книги из корзины пользователя API")
     public void deleteBook(LoginResponseModel authData){
         given(requestSpecificationWithContentTypeJson)
                 .header("Authorization", "Bearer " + authData.getToken())
@@ -36,7 +34,7 @@ public class ApiSteps {
                 .extract().response();
     }
 
-    @Step("Добавление книги в корзину пользователя")
+    @Step("Добавляем книгу в корзину пользователя")
     public void addBook(LoginResponseModel authData) {
         String isbn = "9781449325862";
         String bookData = format("{\"userId\":\"%s\",\"collectionOfIsbns\":[{\"isbn\":\"%s\"}]}",

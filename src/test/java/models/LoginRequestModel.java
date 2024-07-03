@@ -4,6 +4,6 @@ import lombok.Data;
 @Data
 public class LoginRequestModel {
 
-   private String password,
-            userName;
+   private String password = "Karpuk20!",
+           userName = "DimKa";
 }
