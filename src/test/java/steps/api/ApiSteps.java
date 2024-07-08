@@ -3,17 +3,19 @@ package steps.api;
 import io.qameta.allure.Step;
 import models.LoginRequestModel;
 import models.LoginResponseModel;
+import tests.TestData;
 
 import static io.restassured.RestAssured.given;
 import static java.lang.String.format;
 import static specs.BookStoreSpecs.*;
 
 public class ApiSteps {
+    TestData data = new TestData();
     @Step("Авторизация пользователя")
     public LoginResponseModel loginUser() {
         LoginRequestModel loginModel = new LoginRequestModel();
-        loginModel.setPassword(loginModel.getPassword());
-        loginModel.setUserName(loginModel.getUserName());
+        loginModel.setPassword(data.getPaswword());
+        loginModel.setUserName(data.getUsername());
        return (given(requestSpecificationWithContentTypeApplicationJson)
                 .body(loginModel)
                 .when()
@@ -36,9 +38,8 @@ public class ApiSteps {
 
     @Step("Добавляем книгу в корзину пользователя")
     public void addBook(LoginResponseModel authData) {
-        String isbn = "9781449325862";
         String bookData = format("{\"userId\":\"%s\",\"collectionOfIsbns\":[{\"isbn\":\"%s\"}]}",
-                authData.getUserId(), isbn);
+                authData.getUserId(), data.getIsbn());
 
         given(requestSpecificationWithContentTypeApplicationJson)
                 .header("Authorization", "Bearer " + authData.getToken())

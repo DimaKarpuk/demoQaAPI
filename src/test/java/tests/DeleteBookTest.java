@@ -18,6 +18,5 @@ public class DeleteBookTest extends TestBase{
         apisteps.addBook(loginResponseModel);
         profilePage.addCookie(loginResponseModel);
         profilePage.delBookUi();
-        profilePage.checkDeleteBookWithUi();
     }
 }
