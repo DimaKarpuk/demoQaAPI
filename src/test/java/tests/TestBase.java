@@ -19,7 +19,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("version","120.0");
         Configuration.baseUrl = System.getProperty("baseUrl","https://demoqa.com");
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = System.getProperty("selenoidURL","https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = System.getProperty("selenoidURL");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
