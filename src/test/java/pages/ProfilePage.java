@@ -17,37 +17,52 @@ import static io.qameta.allure.Allure.step;
 public class ProfilePage {
     TestData data = new TestData();
     public final SelenideElement
-            deleteBook =  $("#delete-record-undefined"),
+            deleteBook = $("#delete-record-undefined"),
             closeSmallModal = $("#closeSmallModal-ok"),
             emptyCart = $(".rt-noData"),
             loginValue = $("#userName-value");
 
     @Step("Добовляем cookie авторизации")
-    public void addCookie(LoginResponseModel authData){
+    public void addCookie(LoginResponseModel authData) {
         open("/favicon.ico");
         getWebDriver().manage().addCookie(new Cookie("userID", authData.getUserId()));
         getWebDriver().manage().addCookie(new Cookie("expires", authData.getExpires()));
         getWebDriver().manage().addCookie(new Cookie("token", authData.getToken()));
     }
-    @Step("Удаляем книгу из корзины через UI")
-    public void delBookUi(){
-        step ("Открываем страницу профиль", () ->{
-            open("/profile");
-        });
-        step("Проверяем что мы вошли на сайт авторизованные", () ->{
-            loginValue.shouldHave(text(data.getUsername()));
-        });
-        step("Проверяем что в корзине присутствует книга", () ->{
-            emptyCart.shouldNotBe(visible);
-        });
-        step("Удаляем книгу из корзины", () ->{
-            emptyCart.shouldNotBe(visible);
-            deleteBook.click();
-            closeSmallModal.click();
-            Selenide.confirm();
-        });
-        step("Проверяем что книга отсутствует в корзине", () ->{
-            emptyCart.shouldHave(text("No rows found"));
-        });
+
+    @Step("Открываем страницу профиль")
+    public void openProfilePage() {
+        open("/profile");
+    }
+
+    @Step("Проверяем что мы вошли на сайт авторизованные")
+    public void checkToAuthorized() {
+        loginValue.shouldHave(text(data.getUsername()));
+    }
+
+    @Step("Проверяем что в корзине присутствует книга")
+    public void checkCartShouldHaveBook() {
+        emptyCart.shouldNotBe(visible);
+    }
+
+    @Step("Удаляем книгу из корзины")
+    public void deleteBookUi() {
+        deleteBook.click();
+
+    }
+
+    @Step("Подтверждаем удаление из корзины")
+    public void confirmDelete() {
+        closeSmallModal.click();
+    }
+
+    @Step("Закрываем диологовое окно")
+    public void closeDialogWindow() {
+        Selenide.confirm();
+    }
+
+    @Step("Проверяем что книга отсутствует в корзине")
+    public void checkCartIsEmpty() {
+        emptyCart.shouldHave(text("No rows found"));
     }
 }
