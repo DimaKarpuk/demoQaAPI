@@ -1,13 +1,11 @@
-# Проект по автоматизации тестирования для компании [**intexsoft**](https://www.intexsoft.by/)
-## [<img align="center" src="media/logo/logo.png" height="20" width="120">](https://www.intexsoft.by/)
-СОВЕРШЕНСТВУЕМ БИЗНЕС С IT
+# Проект по автоматизации тестирования  [**demoqa.com**](https://demoqa.com/)
 
 ## **Содержание:**
 ____
 
 * <a href="#tools">Технологии и инструменты</a>
 
-* <a href="#cases">Примеры автоматизированных тест-кейсов</a>
+* <a href="#cases">Описание автотеста для книжного магазина</a>
 
 * <a href="#jenkins">Сборка в Jenkins</a>
 
@@ -35,18 +33,18 @@ ____
 </p>
 
 <a id="cases"></a>
-## <a name="Примеры автоматизированных тест-кейсов">**Примеры автоматизированных тест-кейсов:**</a>
+## <a name="UI + API автотесты для книжного магазина">** UI + API автотесты для книжного магазина:**</a>
 ____
-- ✓ *Параметризованный тест кликабельности категории на главной странице*
-- ✓ *Пойск вакансии в городе Гродно на позицию AQA*
-- ✓ *Заполнение резюме intexsoft*
+- ✓ *API автотест авторизации*
+- ✓ *API автотест добавления книги в корзину покупателя*
+- ✓ *UI автотест удаление книги из корзины покупателя*
 
 ____
 <a id="jenkins"></a>
-## </a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Intexsoft_KarpukD/)</a>
+## </a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/)</a>
 ____
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Intexsoft_KarpukD/"><img src="media/screenshot/jenkinsIntexsoft.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/"><img src="media/screenshot/jenkinsIntexsoft.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
@@ -75,7 +73,7 @@ ___
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/screenshot/allureReport.png" width="850">  
+<img title="Allure Overview Dashboard" src="media/screenshot/allureMain.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
@@ -89,7 +87,7 @@ ____
 ## <img alt="Allure" height="25" src="media/logo/Telegram_2019_Logo.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 ____
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/screenshot/telegramReport.png" width="550">  
+<img title="Allure Overview Dashboard" src="media/screenshot/telegramScreen.png" width="550">  
 </p>
 
 ____
@@ -97,5 +95,5 @@ ____
 ## <img alt="Selenoid" height="25" src="media/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
 ____
 <p align="center">
-<img title="Selenoid Video" src="media/gif/6241d9c23517523b5b23ca2c0f842005.gif" width="550" height="350"  alt="video">   
+<img title="Selenoid Video" src="media/gif/allureGif.gif" width="550" height="350"  alt="video">   
 </p>
