@@ -11,6 +11,8 @@ import static specs.BookStoreSpecs.*;
 
 public class ApiSteps {
     TestData data = new TestData();
+
+
     @Step("Авторизация пользователя")
     public LoginResponseModel loginUser() {
         LoginRequestModel loginModel = new LoginRequestModel();
@@ -40,7 +42,7 @@ public class ApiSteps {
     public void addBook(LoginResponseModel authData) {
         AddBookModel bookData = new AddBookModel();
         bookData.setUserId(loginUser().getUserId());
-        bookData.setIsbn(data.getIsbn());
+        bookData.setIsbn(data.isbn());
 
         given(requestSpecificationWithContentTypeApplicationJson)
                 .header("Authorization", "Bearer " + authData.getToken())
