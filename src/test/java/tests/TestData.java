@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class TestData {
 
-    String paswword = "Karpuk20!";
+    String password = "Karpuk20!";
     String username = "DimKa";
     public String isbn() {
         List<String> isbns = new LinkedList<>();

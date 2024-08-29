@@ -12,13 +12,12 @@ import static specs.BookStoreSpecs.*;
 public class ApiSteps {
     TestData data = new TestData();
 
-
     @Step("Авторизация пользователя")
     public LoginResponseModel loginUser() {
         LoginRequestModel loginModel = new LoginRequestModel();
-        loginModel.setPassword(data.getPaswword());
+        loginModel.setPassword(data.getPassword());
         loginModel.setUserName(data.getUsername());
-       return (given(requestSpecificationWithContentTypeApplicationJson)
+        return (given(requestSpecificationWithContentTypeApplicationJson)
                 .body(loginModel)
                 .when()
                 .post("/Account/v1/Login")
@@ -26,8 +25,9 @@ public class ApiSteps {
                 .spec(responseSpecificationWithStatusCode200)
                 .extract().as(LoginResponseModel.class));
     }
+
     @Step("Удаляем книги из корзины пользователя API")
-    public void deleteBook(LoginResponseModel authData){
+    public void deleteBook(LoginResponseModel authData) {
         given(requestSpecificationWithContentTypeJson)
                 .header("Authorization", "Bearer " + authData.getToken())
                 .queryParams("UserId", authData.getUserId())
