@@ -1,99 +1,129 @@
 # Проект по автоматизации тестирования  [**demoqa.com**](https://demoqa.com/)
 
-## **Содержание:**
-____
+# 🧾 Содержание:
+- <a href="#tools">Технологии и инструменты</a>
+- <a href="#checking">Тестовые сценарии, реализованные в автоматизированных тест-кейсах</a>
+- <a href="#jenkins">Сборка в Jenkins</a>
+- <a href="#console">Запуск тестов (Из терминала)</a>
+- <a href="#allureReport">Allure-отчет</a>
+- <a href="#allure">Интеграция с Allure TestOps</a>
+- <a href="#teleg"> Уведомление в Telegram о результатах выполнения автоматизированных тестов</a>
+- <a href="#gif"> Пример видео запуска тестов</a>
+---
 
-* <a href="#tools">Технологии и инструменты</a>
-
-* <a href="#cases">Описание автотеста для книжного магазина</a>
-
-* <a href="#jenkins">Сборка в Jenkins</a>
-
-* <a href="#console">Запуск из терминала</a>
-
-* <a href="#allure">Allure отчет</a>
-
-* <a href="#telegram">Уведомление в Telegram при помощи бота</a>
-
-* <a href="#video">Примеры видео выполнения тестов на Selenoid</a>
-____
+- Тесты в данном проекте написаны на языке <code>Java</code> с использованием фреймворка для тестирования [Selenide](https://selenide.org/), c применением паттерна Page Object.
+- Сборщик - <code>Gradle</code>.
+- <code>JUnit 5</code> задействован в качестве фреймворка модульного тестирования.
+- В отчетах Allure для каждого теста (запускаемого удаленно) прикреплено видео прохождения теста.
+---
 
 <a id="tools"></a>
-### Технологии и инструменты:
+
+## 🔨 Технологии и инструменты:
 
 <p align="left">
 <a href="https://allurereport.org/"><img align="center" src="media/logo/Allure_Report.svg" height="40" width="40"></a>
 <a href="https://gradle.org/"><img align="center" src="media/logo/gradle-original.svg" height="40" width="40"></a>
-<a href="https://www.jetbrains.com/idea/"><img align="center" src="media/logo/intellij-original.svg" height="40" width="40"></a>
 <a href="https://www.java.com/"><img align="center" src="media/logo/java-original-wordmark.svg" height="40" width="40"></a>
 <a href="https://www.jenkins.io/"><img align="center" src="media/logo/jenkins-original.svg" height="40" width="40"></a>
 <a href="https://junit.org/junit5/"><img align="center" src="media/logo/junit-original.svg" height="40" width="40"></a>
 <a href="https://selenide.org/"><img align="center" src="media/logo/Selenide.svg" height="40" width="40"></a>
-<a href="https://aerokube.com/selenoid/"><img align="center" src="media/logo/Selenoid.svg" height="40" width="40"></a>
+<a href="https://qameta.io/"><img align="center" src="media/logo/allureTe.svg" height="40" width="40"></a>
+<a href="https://qameta.io/"><img align="center" src="media/logo/intellij-original.svg" height="40" width="40"></a>
 </p>
 
-<a id="cases"></a>
-## <a name="UI + API автотесты для книжного магазина">** UI + API автотесты для книжного магазина:**</a>
-____
-- ✓ *API автотест авторизации*
-- ✓ *API автотест добавления книги в корзину покупателя*
-- ✓ *UI автотест удаление книги из корзины покупателя*
+---
+<a id="checking"></a>
+## :clipboard: Тестовые сценарии
 
-____
+- [x] Негативный тест на авторизацию пользователя без password
+- [x] Негативный тест на авторизацию пользователя без username
+- [x] Тест на получение книги
+- [x] Тест на получение token авторизации
+- [x] Тест на удаление книги из корзины (Api + Ui)
+---
+
 <a id="jenkins"></a>
-## </a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/)</a>
-____
-<p align="center">  
-<a href="https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/"><img src="media/screenshot/jenkinsIntexsoft.png" alt="Jenkins" width="950"/></a>  
+## <img src="media/logo/jenkins-original.svg" width="25" height="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/)
+
+<p align="center">
+<img src="media/screenshot/jenkins.png" alt="Jenkins Page" width="1000" height="350">
 </p>
 
-
-### **Параметры сборки в Jenkins:**
-
-- *BROWSER (браузер, по умолчанию chrome)*
-- *BROWSER_VERSION (версия браузера, по умолчанию 122.0)*
-- *BROWSER_SIZE (размер окна браузера, по умолчанию 1928x1080)*
-- *SELENOID_URL (логин, пароль и адрес удаленного сервера Selenoid)*
+---
 
 <a id="console"></a>
-## Команды для запуска из терминала
-___
-***Локальный запуск:***
-```bash  
-gradle clean
-gradle parameterized_test
-gradle jobSearch_test
-gradle resume_test
+## :rocket: Команды для запуска
+
+### Локальный запуск
+
+```bash
+gradle clean test -DbrowserHost=local
 ```
 
-___
-<a id="allure"></a>
-## <img alt="Allure" height="25" src="media/logo/Allure_Report.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Intexsoft_KarpukD/12/allure/)</a>
-___
-### *Основная страница отчёта*
+### Удаленный запуск (через selenoid)
+
+```bash
+gradle clean test --DbrowserHost=remote
+```
+---
+
+<a id="allureReport"></a>
+## <img alt="Allure" height="25" src="media/logo/Allure_Report.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/27/allure/">Allure Report</a>
+
+## 🖨️ Основная страница отчёта
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/screenshot/allureMain.png" width="850">  
+<img title="Allure Overview Dashboard" src="media/screenshot/allure.png" width="850">  
 </p>  
 
-### *Тест-кейсы*
+## 📄 Тест-кейсы
 
 <p align="center">  
-<img title="Allure Tests" src="media/screenshot/allureStep.png" width="850">  
+<img title="Allure Tests" src="media/screenshot/allure1.png" width="850">   
 </p>
 
-____
-<a id="telegram"></a>
-## <img alt="Allure" height="25" src="media/logo/Telegram_2019_Logo.svg" width="25"/></a> Уведомление в Telegram при помощи бота
-____
+---
+
+<a id="allure"></a>
+## <img alt="Allure_TO" height="25" src="media/logo/allureTe.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4392/dashboards">Allure TestOps</a>
+
+## 🖨️ Основная страница отчёта
+
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/screenshot/telegramScreen.png" width="550">  
+<img title="Allure TestOps Dashboard" src="media/screen/allureT.png" width="850">  
+</p>  
+
+## 📄 Авто тест-кейсы
+
+<p align="center">  
+<img title="Allure Tests" src="media/screen/alluret2.png" width="850">  
 </p>
 
-____
-<a id="video"></a>
-## <img alt="Selenoid" height="25" src="media/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
-____
+---
+
+<a id="teleg"></a>
+## <img src="media/logo/Telegram_2019_Logo.svg" width="25" height="25"/> Уведомления в Telegram чат с ботом
+
+### Уведомление через чат бот
+
 <p align="center">
-<img title="Selenoid Video" src="media/gif/allureGif.gif" width="550" height="350"  alt="video">   
+<img src="media/screen/telegram.jpg" alt="Telegram" width="430" height="400">
+</p>
+
+
+#### Содержание уведомления в Telegram
+
+- :heavy_check_mark: Окружение
+- :heavy_check_mark: Комментарий
+- :heavy_check_mark: Длительность прохождения тестов
+- :heavy_check_mark: Общее количество сценариев
+- :heavy_check_mark: Процент прохождения тестов
+- :heavy_check_mark: Ссылка на Allure отчет
+---
+
+<a id="gif"></a>
+####  Пример видео запуска тестов
+<p align="center">
+  <img src="media/gif/testVideo.gif">
 </p>

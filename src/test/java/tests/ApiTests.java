@@ -14,7 +14,7 @@ public class ApiTests extends ApiTestBase {
     LoginRequestModel loginModel = new LoginRequestModel();
     AddBookModel bookData = new AddBookModel();
 
-    @DisplayName("Тест на на неуспешную авторизацию без UserName")
+    @DisplayName("Тест на на неуспешную авторизацию без Password")
     @Test
     void loginWithOutUserNameTest() {
         loginModel.setPassword(data.getPassword());
