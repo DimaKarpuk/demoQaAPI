@@ -69,7 +69,7 @@ gradle clean test --DbrowserHost=remote
 ---
 
 <a id="allureReport"></a>
-## <img alt="Allure" height="25" src="media/logo/Allure_Report.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/27/allure/">Allure Report</a>
+## <img alt="Allure" height="25" src="media/logo/Allure_Report.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/DemoQaBookStore_DimaKarpuk27/28/allure/">Allure Report</a>
 
 ## 🖨️ Основная страница отчёта
 
@@ -86,18 +86,18 @@ gradle clean test --DbrowserHost=remote
 ---
 
 <a id="allure"></a>
-## <img alt="Allure_TO" height="25" src="media/logo/allureTe.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4392/dashboards">Allure TestOps</a>
+## <img alt="Allure_TO" height="25" src="media/logo/allureTe.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4407/dashboards">Allure TestOps</a>
 
 ## 🖨️ Основная страница отчёта
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="media/screen/allureT.png" width="850">  
+<img title="Allure TestOps Dashboard" src="media/screenshot/allureT.png" width="850">  
 </p>  
 
 ## 📄 Авто тест-кейсы
 
 <p align="center">  
-<img title="Allure Tests" src="media/screen/alluret2.png" width="850">  
+<img title="Allure Tests" src="media/screenshot/alluret1.png" width="850">  
 </p>
 
 ---
@@ -105,10 +105,10 @@ gradle clean test --DbrowserHost=remote
 <a id="teleg"></a>
 ## <img src="media/logo/Telegram_2019_Logo.svg" width="25" height="25"/> Уведомления в Telegram чат с ботом
 
-### Уведомление через чат бот
+### Уведомление через чат бот  
 
 <p align="center">
-<img src="media/screen/telegram.jpg" alt="Telegram" width="430" height="400">
+<img src="media/screenshot/telegram.jpg" alt="Telegram" width="330" height="300">
 </p>
 
 
@@ -125,5 +125,5 @@ gradle clean test --DbrowserHost=remote
 <a id="gif"></a>
 ####  Пример видео запуска тестов
 <p align="center">
-  <img src="media/gif/testVideo.gif">
+  <img src="media/gif/vid.gif">
 </p>
