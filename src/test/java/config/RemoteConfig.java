@@ -19,6 +19,5 @@ public interface RemoteConfig extends Config {
     String getBrowserVersion();
 
     @Key("remoteUrl")
-    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String remoteUrl();
 }
