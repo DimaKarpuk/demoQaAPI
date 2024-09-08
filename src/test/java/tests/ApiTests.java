@@ -2,6 +2,7 @@ package tests;
 
 import models.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -9,11 +10,11 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static specs.BookStoreSpecs.*;
 
-public class ApiTests extends ApiTestBase {
+public class ApiTests extends TestBase {
     TestData data = new TestData();
     LoginRequestModel loginModel = new LoginRequestModel();
-    AddBookModel bookData = new AddBookModel();
 
+    @Tag("api")
     @DisplayName("Тест на на неуспешную авторизацию без Password")
     @Test
     void loginWithOutUserNameTest() {
@@ -33,6 +34,7 @@ public class ApiTests extends ApiTestBase {
                 assertThat(response.getMessage()).isEqualTo("UserName and Password required."));
     }
 
+    @Tag("api")
     @DisplayName("Тест на на неуспешную авторизацию без UserName")
     @Test
     void loginWithOutPasswordTest() {
@@ -52,6 +54,7 @@ public class ApiTests extends ApiTestBase {
                 assertThat(response.getMessage()).isEqualTo("UserName and Password required."));
     }
 
+    @Tag("api")
     @DisplayName("Тест на получение книги")
     @Test
     void getListBookTest() {
@@ -68,6 +71,7 @@ public class ApiTests extends ApiTestBase {
                 assertThat(getBookModel.getIsbn()).isEqualTo(getBookModel.getIsbn()));
     }
 
+    @Tag("api")
     @DisplayName("Тест на получение Token авторизации")
     @Test
     void getTokenTest() {

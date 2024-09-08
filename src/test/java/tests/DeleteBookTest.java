@@ -2,6 +2,7 @@ package tests;
 
 import models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import steps.api.ApiSteps;
 import pages.ProfilePage;
@@ -11,6 +12,7 @@ public class DeleteBookTest extends TestBase {
     ProfilePage profilePage = new ProfilePage();
     LoginResponseModel loginResponseModel = apisteps.loginUser();
 
+    @Tag("apiWithUi")
     @DisplayName("Тест на удаление книги из корзины пользователя")
     @Test
     void deleteBookTest() {
