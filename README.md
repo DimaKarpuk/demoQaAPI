@@ -30,7 +30,7 @@
 <a href="https://junit.org/junit5"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" title="JUnit5" alt="JUnit5" width="40" height="40"/> </a>
 <a href="https://gradle.org"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" title="Gradle" alt="Gradle" width="40" height="40"/> </a>
 <a href="https://www.jenkins.io"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" title="Jenkins" alt="Jenkins" width="40" height="40"/> </a>
-<a href="hhttps://www.atlassian.com/software/jira"> <img src="media/logo/Jira.svg" title="Jira" alt="Jira" width="40" height="40"/> </a>
+<a href="https://www.atlassian.com/software/jira"> <img src="media/logo/Jira.svg" title="Jira" alt="Jira" width="40" height="40"/> </a>
 <a href="https://rest-assured.io/"> <img src="media/logo/RestAssured.svg" title="RestAssured" alt="RestAssured" width="40" height="40"/> </a>
 </p>
 
