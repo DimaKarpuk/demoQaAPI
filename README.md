@@ -7,6 +7,7 @@
 - <a href="#console">Запуск тестов (Из терминала)</a>
 - <a href="#allureReport">Allure-отчет</a>
 - <a href="#allure">Интеграция с Allure TestOps</a>
+- <a href="#jira">Интеграция с Jira</a>
 - <a href="#teleg"> Уведомление в Telegram о результатах выполнения автоматизированных тестов</a>
 - <a href="#gif"> Пример видео запуска тестов</a>
 ---
@@ -22,7 +23,8 @@
 ## 🔨 Технологии и инструменты:
 
 <p align="left">
-<a href="https://allurereport.org/"> <img src="media/logo/Allure_Report.svg" title="Appium" alt="Appium" width="40" height="40"/> </a>
+<a href="https://www.atlassian.com/ru/software/jira"> <img src="media/logo/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/> </a>
+<a href="https://allurereport.org/"> <img src="media/logo/Allure_Report.svg" title="Allurereport" alt="Allurereport" width="40" height="40"/> </a>
 <a href="https://selenide.org/"> <img src="media/logo/Selenide.svg" title="Selenide" alt="Selenide" width="40" height="40"/> </a>
 <a href="https://www.w3schools.com/java/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" title="Java" alt="Java" width="40" height="40"/> </a> 
 <a href="https://www.jetbrains.com/idea/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" title="IntelliJ Idea" alt="IntelliJ Idea" width="40" height="40"/> </a> 
@@ -30,7 +32,7 @@
 <a href="https://junit.org/junit5"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" title="JUnit5" alt="JUnit5" width="40" height="40"/> </a>
 <a href="https://gradle.org"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" title="Gradle" alt="Gradle" width="40" height="40"/> </a>
 <a href="https://www.jenkins.io"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg" title="Jenkins" alt="Jenkins" width="40" height="40"/> </a>
-<a href="hhttps://www.atlassian.com/software/jira"> <img src="media/logo/Jira.svg" title="Jira" alt="Jira" width="40" height="40"/> </a>
+<a href="https://www.atlassian.com/software/jira"> <img src="media/logo/Jira.svg" title="Jira" alt="Jira" width="40" height="40"/> </a>
 <a href="https://rest-assured.io/"> <img src="media/logo/RestAssured.svg" title="RestAssured" alt="RestAssured" width="40" height="40"/> </a>
 </p>
 
@@ -123,6 +125,17 @@ gradle clean apiWithUiTest -DbrowserHost=remote
 
 <p align="center">  
 <img title="Allure Tests" src="media/screenshot/alluret1.png" width="850">  
+</p>
+
+---
+
+<a id="jira"></a>
+## <img alt="Allure_TO" height="25" src="media/logo/jira-original-wordmark.svg" width="25"/> </a>Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1346">Jira</a>
+
+##  В Jira создана задача
+
+<p align="center">  
+<img title="Jira" src="media/screenshot/jiraApi.png" width="850">  
 </p>
 
 ---
