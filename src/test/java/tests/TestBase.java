@@ -24,7 +24,7 @@ public class TestBase {
     private static final LocalConfig localConfig = ConfigFactory.create(LocalConfig.class, System.getProperties());
     private static final RemoteConfig remoteConfig = ConfigFactory.create(RemoteConfig.class, System.getProperties());
 
-    private static String defHost = "local";
+    private static String defHost = "remote";
     @BeforeAll
     public static void beforeAll(){
             RestAssured.baseURI = "https://demoqa.com";
